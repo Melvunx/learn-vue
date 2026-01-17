@@ -18,6 +18,15 @@ const sortMovies = () => {
   // movies.value = movies.value.sort((a, b) => a.localeCompare(b));
   movies.value = movies.value.sort((a, b) => (a > b ? 1 : -1));
 };
+
+const newMovie = ref("");
+
+const emptyMovieString = "Film...";
+
+const addMovie = () => {
+  movies.value.push(newMovie.value);
+  newMovie.value = "";
+};
 </script>
 
 <template>
@@ -38,6 +47,11 @@ const sortMovies = () => {
 
     <div class="part">
       <h1>Films</h1>
+      <h3>Ajouter un film</h3>
+      <form action="" @submit.prevent="addMovie">
+        <input type="text" :placeholder="movies[0] ?? emptyMovieString" v-model="newMovie" />
+        <button>Ajouter</button>
+      </form>
       <button @click="sortMovies">Trier</button>
       <ul>
         <li :key="movie" v-for="movie in movies">
