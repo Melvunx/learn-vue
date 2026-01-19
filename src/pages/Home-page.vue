@@ -103,14 +103,7 @@ div.part:first-of-type {
   padding-top: 0;
 }
 
-button {
-  padding: 10px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.2s;
-}
+
 
 button:hover {
   color: white;
